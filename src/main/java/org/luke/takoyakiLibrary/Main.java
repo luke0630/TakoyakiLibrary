@@ -13,9 +13,11 @@ public final class Main extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        plugin = this;
-        getLogger().info("TacoRaceLibraryが有効になりました");
+        plugin = this;  // 常にこのプラグインインスタンスを再設定
+        getLogger().info("TakoyakiLibraryが有効になりました");
 
-        TakoyakiLibrary.GUI = new GUI();
+        if (TakoyakiLibrary.GUI == null) {
+            TakoyakiLibrary.GUI = new GUI();
+        }
     }
 }
