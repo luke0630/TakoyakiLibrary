@@ -1,7 +1,15 @@
 package org.luke.takoyakiLibrary;
 
+import org.bukkit.plugin.java.JavaPlugin;
+
 public class GUI {
-    public void Test() {
-        Main.getPlugin().getLogger().info("きちゃあああああああああああああああ");
+    private final JavaPlugin plugin;
+
+    public GUI(JavaPlugin plugin) {
+        this.plugin = plugin;
+    }
+
+    public void test() {
+        plugin.getLogger().info("きちゃああああああああああああああ");
     }
  }
