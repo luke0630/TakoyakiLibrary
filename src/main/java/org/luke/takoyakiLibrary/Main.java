@@ -15,5 +15,7 @@ public class Main extends JavaPlugin {
     public void onEnable() {
         plugin = this;
         getLogger().info("TacoRaceLibraryが有効になりました");
+
+        TakoyakiLibrary.GUI = new GUI();
     }
 }
