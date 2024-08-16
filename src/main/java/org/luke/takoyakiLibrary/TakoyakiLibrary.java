@@ -1,5 +1,5 @@
 package org.luke.takoyakiLibrary;
 
-public class TakoyakiLibrary {
+public final class TakoyakiLibrary {
     public static GUI GUI;
 }
