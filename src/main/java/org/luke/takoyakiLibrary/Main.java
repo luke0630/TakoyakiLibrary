@@ -11,11 +11,13 @@ public class Main extends JavaPlugin {
 
     private static JavaPlugin plugin;
 
+    public static GUI GUI = null;
+
     @Override
     public void onEnable() {
         plugin = this;
         getLogger().info("TacoRaceLibraryが有効になりました");
 
-        TakoyakiLibrary.GUI = new GUI();
+        Main.GUI = new GUI();
     }
 }
