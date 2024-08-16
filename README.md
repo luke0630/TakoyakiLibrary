@@ -4,7 +4,7 @@
 
 ## 🍎How to install 
 ### Put TakoyakiLibrary-#.#.jar in plugins folder.
-
+You can download the jar file from the release page.
 ```xml
 <repository>
   <id>jitpack.io</id>
