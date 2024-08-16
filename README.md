@@ -3,7 +3,8 @@
 ### for Bukkit, Spigot, Paper plugins
 
 ## 🍎How to install 
-### pom.xml
+### Put TakoyakiLibrary-#.#.jar in plugins folder.
+
 ```xml
 <repository>
   <id>jitpack.io</id>
