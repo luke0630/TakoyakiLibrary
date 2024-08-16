@@ -1,0 +1,4 @@
+name: TakoyakiLibrary
+version: '1.0-SNAPSHOT'
+main: org.luke.takoyakiLibrary.TakoyakiLibrary
+api-version: '1.21'
