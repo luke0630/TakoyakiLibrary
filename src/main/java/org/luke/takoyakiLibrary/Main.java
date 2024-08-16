@@ -3,7 +3,7 @@ package org.luke.takoyakiLibrary;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class Main extends JavaPlugin {
+public final class Main extends JavaPlugin {
 
     public static JavaPlugin getPlugin() {
         return plugin;
