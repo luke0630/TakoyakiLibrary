@@ -76,4 +76,16 @@ public final class TakoUtility {
     public static String getTidyTime(TheTime data) {
         return data.hour + "時間:" + data.minute + "分:" + data.second + "秒";
     }
+
+    public static Inventory changeInventoryTitle(Inventory oldInventory, String newTitle) {
+        // 既存のインベントリのサイズを取得
+        int size = oldInventory.getSize();
+
+        // 新しいタイトルで新しいインベントリを作成
+        Inventory newInventory = Bukkit.createInventory(null, size, TakoUtility.toColor(newTitle));
+
+        // 既存のインベントリの内容を新しいインベントリにコピー
+        newInventory.setContents(oldInventory.getContents());
+        return newInventory;
+    }
 }
