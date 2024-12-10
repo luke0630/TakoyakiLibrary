@@ -88,4 +88,17 @@ public final class TakoUtility {
         newInventory.setContents(oldInventory.getContents());
         return newInventory;
     }
+
+    public static double getDistanceWithoutY(Location from, Location to) {
+        var from_x = from.getX();
+        var from_z = from.getZ();
+
+        var to_x = to.getX();
+        var to_z = to.getZ();
+
+        var distance_x = Math.abs(to_x - from_x);
+        var distance_z = Math.abs(to_z - from_z);
+
+        return distance_x + distance_z;
+    }
 }
