@@ -4,6 +4,8 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.event.inventory.CraftItemEvent;
+import org.bukkit.inventory.CraftingInventory;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
@@ -99,5 +101,26 @@ public final class TakoUtility {
         var distance_z = Math.abs(to_z - from_z);
 
         return distance_x + distance_z;
+    }
+
+    //クラフトしたアイテムの数を取得
+    public static int getCraftedItemCount(CraftItemEvent event) {
+        if(event.getClick().isShiftClick()) {
+            CraftingInventory inventory = event.getInventory();
+
+            // 3x3のクラフトグリッドのアイテムを取得
+            ItemStack[] matrix = inventory.getMatrix();
+            int minAmount = 0;
+
+            for (ItemStack items : matrix) {
+                if (items != null && items.getType() != Material.AIR) {
+                    if (minAmount > items.getAmount() || minAmount == 0) {
+                        minAmount = items.getAmount(); //作れるアイテムの数(最小)
+                    }
+                }
+            }
+            return event.getRecipe().getResult().getAmount() * minAmount;
+        }
+        return event.getRecipe().getResult().getAmount();
     }
 }
