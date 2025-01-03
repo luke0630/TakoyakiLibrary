@@ -1,16 +1,15 @@
 package org.luke.takoyakiLibrary;
 
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
-import org.bukkit.Location;
-import org.bukkit.Material;
+import org.bukkit.*;
 import org.bukkit.event.inventory.CraftItemEvent;
 import org.bukkit.inventory.CraftingInventory;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.SkullMeta;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 public final class TakoUtility {
 
@@ -122,5 +121,14 @@ public final class TakoUtility {
             return event.getRecipe().getResult().getAmount() * minAmount;
         }
         return event.getRecipe().getResult().getAmount();
+    }
+
+    public static ItemStack getPlayerHead(UUID uuid) {
+        ItemStack head = new ItemStack(Material.PLAYER_HEAD);
+        SkullMeta skullMeta = (SkullMeta) head.getItemMeta();
+        skullMeta.setOwningPlayer( Bukkit.getOfflinePlayer(uuid) );
+        head.setItemMeta(skullMeta);
+
+        return head;
     }
 }
