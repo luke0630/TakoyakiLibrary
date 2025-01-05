@@ -15,15 +15,15 @@ You can download the jar file from the release page.
 <dependency>
     <groupId>com.github.luke0630</groupId>
     <artifactId>TakoyakiLibrary</artifactId>
-    <version>1.0</version>
-    <scope>provided</scope>
+    <version>latest version</version>
+    <scope>compile</scope>
 </dependency>
 ```
 
 ## :bulb:Usage example
 
 ```java
-player.sendMessaege( TakoUtility.toColor("&c&l Successful.") );
+player.sendMessaege( TakoUtility.toColor("&c&lSuccessful.") );
 ```
 
 ### Other methods can be found in the TakoUtility class.
